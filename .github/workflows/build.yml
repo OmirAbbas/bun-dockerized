@@ -1,4 +1,4 @@
-name: build
+name: build and test
 
 on:
   pull_request:
@@ -16,3 +16,6 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+
+      - name: Run test
+        run: bun test ./index.tsx
